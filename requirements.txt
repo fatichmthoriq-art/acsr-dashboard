@@ -1,0 +1,18 @@
+# --extra-index-url di bawah ini membuat pip mengambil versi CPU-only dari
+# torch/torchvision (jauh lebih kecil & lebih cepat di-build dibanding versi
+# GPU/CUDA default) -- cocok utk hosting permanen spt Streamlit Community
+# Cloud (free tier, CPU only, RAM dibatasi ~2.7GB -- wheel CPU yg lebih kecil
+# membantu menghemat jatah memori/disk itu). Tidak memengaruhi jalan di
+# Colab (Colab tetap pakai torch versi GPU-nya sendiri yang sudah terpasang,
+# baris ini cuma dipakai kalau pip benar2 perlu install torch dari nol).
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit>=1.36
+torch
+torchvision
+pillow
+pandas
+numpy
+plotly
+reportlab
+matplotlib
+opencv-python-headless
